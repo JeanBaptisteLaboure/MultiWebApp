@@ -1,0 +1,23 @@
+<div id="todo-task">
+	<d-page-nav></d-page-nav>
+	<h1>Todo Tasks</h1>
+	<div class="row">
+		<div id="loop-todos"class="">
+			<div class="block-todo" ng-repeat="todo in todos" >
+				<span ng-click="toggleState($index)"><i class="glyphicon" ng-class="{'glyphicon-ok': todo.completed, 'glyphicon-remove': !todo.completed}"></i></span>
+				<h2>{{ todo.name }}</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div id="new-todo" class="block-todo">
+				<form  class="form-inline">
+					<div class="form-group">
+					    <label for="new_todo_name">New Todo : </label>
+						<input type="text" class="form-control" id="new_todo_name" name="newTodo" ng-model="newTodo">
+				  	</div>
+
+					<input type="submit" value="{{isSubmitting ? 'Saving...' : 'Save'}}" class="btn btn-default" ng-click="saveTodo(new_todo)" ng-disabled="isSubmitting">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
