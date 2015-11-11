@@ -10,5 +10,9 @@ angular.module('WebApp').config(function($routeProvider) {
 		.when('/todoTask', {
 			templateUrl: "assets/templates/todoTask/index.html",
 			controller: "TodoTaskController"
+		})
+		.when('/calendar', {
+			templateUrl: "assets/templates/calendar/index.html",
+			controller: "CalendarController"
 		});
 });
