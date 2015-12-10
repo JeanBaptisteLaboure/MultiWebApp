@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 
 var todos = require('./routes/todos');
+var recipes = require('./routes/recipes');
 
 // Load Express Configuration
 require('./expressConfig')(app, express);
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 //app.use("/", express.static("app/"));
 
 app.use('/todos', todos);
+app.use('/recipe', recipes);
 
 app.get('/', function(req, res){
 	res.sendFile('index.html', {root: app.settings.views});

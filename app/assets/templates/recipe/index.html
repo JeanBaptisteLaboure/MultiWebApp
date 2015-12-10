@@ -1,0 +1,78 @@
+<div id="modal-new-recipe" class="modal fade" tabindex="-1" role="dialog">
+  	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title">Add a recipe</h4>
+      		</div>
+      		<div class="modal-body">
+        		<form>
+				  	<div class="form-group">
+				    	<label for="name_recipe">Name</label>
+				    	<input type="text" class="form-control" id="name_recipe" placeholder="Name">
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="exampleInputPassword1">Ingredients</label>
+				    	<div class="row">
+					    	<div class="col-xs-3">
+					    		<input type="num" class="form-control" id="ingredient_amount_1" placeholder="3000">
+					    	</div>
+					    	<div class="col-xs-9">
+					    		<input type="num" class="form-control" id="ingredient_name_1" placeholder="g of cheese">
+					    	</div>
+					    </div>
+				  	</div>
+				  	<div class="form-group">
+					    <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></button>
+				  	</div>
+				  	<div class="form-group">
+				  		<label for="preparation_recipe">Preparation instructions</label>
+				  		<textarea class="form-control" id="preparation_recipe"></textarea>
+				  	</div>
+				  	<div class="form-group">
+				  		<label for="image_recipe">Image</label>
+				  		<input type="file" class="form-control" id="image_recipe">
+				  	</div>
+				</form>
+      		</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        		<button type="button" class="btn btn-primary">Save the recipe</button>
+      		</div>
+		</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div>
+
+<div id="recipe">
+	<d-page-nav></d-page-nav>
+	<h1>Recipes</h1>
+	<div class="row" >
+		<div class="left-box">
+			<ul>
+				<li class="list-recipe" ng-repeat="recipe in recipes" ng-click="changeRecipe(recipe._id)">
+					<img src="assets/images/{{ recipe.img_name }}">
+					<h4>{{ recipe.name }}</h4>
+				</li>
+				<li class="list-recipe  new-recipe" data-toggle="modal" data-target="#modal-new-recipe">
+					<i class="glyphicon glyphicon-plus"></i>
+					<h4>Add a recipe</h4>
+				</li>
+			</ul>
+		</div>
+		<div class="right-box view-content-recipe">
+			<h3>{{ currentRecipe.name }}</h3>
+			<h5>Ingredients</h5>
+			<h6>Pour {{ basePreparationRecipe }} personnes.</h6>
+			<img src="assets/images/{{ currentRecipe.img_name }}">
+			<ul>
+				<li ng-repeat="ingredient in currentRecipe.ingredients_list">
+					{{ ingredient.amount | filterAmountIngredient }} {{ ingredient.name }}
+				</li>
+			</ul>
+			<h5>Preparation</h5>
+			<p>
+				{{ currentRecipe.preparation }}
+			</p>
+		</div>
+	</div>
+</div>

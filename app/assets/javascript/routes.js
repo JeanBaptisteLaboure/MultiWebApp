@@ -14,5 +14,9 @@ angular.module('WebApp').config(function($routeProvider) {
 		.when('/calendar', {
 			templateUrl: "assets/templates/calendar/index.html",
 			controller: "CalendarController"
+		})
+		.when('/recipe', {
+			templateUrl: "assets/templates/recipe/index.html",
+			controller: "RecipeController"
 		});
 });

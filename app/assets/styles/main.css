@@ -1,6 +1,7 @@
 body {
 	background-color: #252830;
 	color: rgba(214,214,214,1);
+	overflow: hidden;
 }
 
 h1 {
@@ -24,6 +25,10 @@ h1 {
 
 .fa {
 	position: relative;
+}
+
+.modal {
+	color: black;
 }
 
 #launchpad {
@@ -96,4 +101,89 @@ h1 {
 }
 #todo-task #loop-todos .block-todo span i.glyphicon-ok {
     color: rgba(29, 220, 44, 0.41);
+}
+
+
+/********************
+	   RECIPE
+********************/
+#recipe div.row {
+    position: absolute;
+    margin-top: 35px;
+    border-top: 1px solid;
+    height: 91%;
+}
+
+#recipe div.left-box {
+    left: 0;
+    width: 20%;
+    height: 100%;
+    max-height: 100%;
+    position: absolute;
+    border-style: solid;
+    border-width: 2px 2px 0px 0px;
+    border-radius: 0px 10px;
+    overflow-y: scroll;
+}
+
+#recipe div.right-box {
+    //position: absolute;
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+	padding: 15px;
+}
+
+#recipe div.left-box ul {
+	margin: 0;
+	padding: 0;
+}
+
+#recipe ul li.list-recipe {
+	display: block;
+    border-bottom: 1px solid;
+    padding: 10px 0;
+}
+
+#recipe ul li.list-recipe.new-recipe i {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+}
+
+#recipe ul li.list-recipe:hover {
+	background-color: #696969;
+}
+
+#recipe li.list-recipe img {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-right: 5px; 
+}
+
+#recipe li.list-recipe h4 {
+	line-height: 100px;
+	vertical-align: middle;
+	margin: 0;
+}
+
+#recipe div.view-content-recipe h3{
+	text-align: center;
+}
+
+#recipe div.view-content-recipe img{
+	float: right;
+	width: 400px;
+	height: 400px;
+	margin: 0 15px 15px 15px; 
+}
+
+#recipe div.view-content-recipe p{
+	text-align: justify;
 }
